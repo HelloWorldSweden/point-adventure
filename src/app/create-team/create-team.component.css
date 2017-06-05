@@ -1,0 +1,27 @@
+.team-wrapper {
+  width:90%;
+  margin: 10% 5%;
+  padding: 5%;
+  text-align:center;
+}
+
+h1 {
+  color: #057190;
+  font-family: "Slabo 27px";
+  font-size: 10vh;
+  margin-bottom:1em;
+}
+
+input.team-field {
+  font-size: 2em;
+  font-family: 'Slabo 27px';
+  padding: 0.3em 0.4em;
+  height: auto;
+}
+
+button {
+  font-size: 2em;
+  font-family: 'Slabo 27px';
+  width: 100%;
+  background-color: #057190;
+}
