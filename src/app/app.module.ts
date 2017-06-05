@@ -11,6 +11,7 @@ import { ActivitiesComponent} from './activities.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CreateTeamComponent } from './create-team/create-team.component';
+import { SharedService } from './shared.service';
 
 @NgModule({
   imports: [
