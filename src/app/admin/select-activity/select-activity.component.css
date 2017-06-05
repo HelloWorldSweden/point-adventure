@@ -1,0 +1,31 @@
+ul.activities {
+  list-style:none;
+  width: 90%;
+  margin:1em 5%;
+  background-color: #f2f2f2;
+  padding: 0;
+}
+
+ul.activities li {
+  list-style:none;
+  padding: 0.3em 0.5em;
+  font-size: 2em;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Slabo 27px', serif;
+}
+
+ul.activities li:nth-child(2n) {
+  background-color:#f2f2f2;
+}
+
+ul.activities li:hover {
+  background-color: #ccc;
+}
+
+ul.activities li .points {
+  float:right;
+}
+
+ul.activities li:last-child {
+  border-bottom: none;
+}

@@ -6,9 +6,11 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TeamService {
+  teams: FirebaseListObservable<any[]>;
   db: AngularFireDatabase;
   constructor(db: AngularFireDatabase) {
     this.db = db;
+    this.teams = db.list('/teams');
   }
   createTeam(name: string): Observable<boolean> {
     return this.db.list('/teams', { query: { orderByChild: 'name', equalTo: name}}).map( response => {
@@ -26,5 +28,13 @@ export class TeamService {
     return this.db.list('/teams', { query: { orderByChild: 'name', equalTo: teamName}} ).map( team => {
       return team[0];
     })
+  }
+  getTeams(): Observable<any[]> {
+    return this.teams;
+  }
+  markActivityForTeam(activity: any, team: any): void {
+    this.db.object('/teams/' + team.$key + '/points').$ref.transaction( points => {
+      return team.points ? points + activity.points : activity.points;
+    });
   }
 }

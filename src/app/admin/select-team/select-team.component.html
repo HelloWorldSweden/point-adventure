@@ -1,0 +1,8 @@
+<header><span class="back-icon fa fa-chevron-circle-left" (click)="goBack()"></span><h1>Välj lag</h1></header>
+<ul class="activities">
+  <li *ngFor="let team of teams | async"
+      (click)="onClick(team)">
+    {{team.name}}
+    <span class="points">{{team.points}}</span>
+  </li>
+</ul>

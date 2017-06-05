@@ -6,6 +6,9 @@ import { AdminDashboardComponent } from './admin-dashboard.component';
 
 import { AuthGuard } from '../auth-guard.service';
 
+import { SelectActivityComponent } from './select-activity/select-activity.component';
+import { SelectTeamComponent } from './select-team/select-team.component';
+
 const adminRoutes: Routes = [
   {
     path: '',
@@ -16,7 +19,9 @@ const adminRoutes: Routes = [
         path: '',
         canActivateChild: [ AuthGuard ],
         children: [
-          { path: '', component: AdminDashboardComponent }
+          { path: '', component: SelectActivityComponent },
+          { path: 'activities', component: SelectActivityComponent },
+          { path: 'team/:activity', component: SelectTeamComponent }
         ]
       }
     ]
