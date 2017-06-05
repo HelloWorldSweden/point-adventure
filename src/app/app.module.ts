@@ -11,7 +11,10 @@ import { ActivitiesComponent} from './activities.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CreateTeamComponent } from './create-team/create-team.component';
-import { SharedService } from './shared.service';
+import { AdminModule } from './admin/admin.module';
+
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   imports: [
@@ -19,9 +22,11 @@ import { SharedService } from './shared.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    AdminModule,
+    LoginRoutingModule
   ],
-  declarations: [ AppComponent, ActivityDetailComponent, ActivitiesComponent, CreateTeamComponent ],
+  declarations: [ AppComponent, ActivityDetailComponent, ActivitiesComponent, CreateTeamComponent, LoginComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

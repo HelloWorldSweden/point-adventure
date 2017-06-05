@@ -39,7 +39,9 @@ export class ActivitiesComponent implements OnInit {
     this.teamName = this.shared.teamName;
     this.teamService.getTeam(this.teamName).subscribe( team => {
       console.log(team);
-      this.teamPoints = team.points;
+      if ( team ) {
+        this.teamPoints = team.points;
+      }
     })
   }
 }
