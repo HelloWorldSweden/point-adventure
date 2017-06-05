@@ -1,0 +1,8 @@
+<header><h1>Välj aktivitet</h1></header>
+<ul class="activities">
+  <li *ngFor="let activity of activities | async"
+      (click)="onClick(activity)">
+    {{activity.name}}
+    <span class="points">{{activity.points}}</span>
+  </li>
+</ul>
