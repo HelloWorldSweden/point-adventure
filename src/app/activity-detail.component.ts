@@ -6,7 +6,6 @@ import { Location } from '@angular/common';
 
 import { ActivityService } from './activity.service';
 import 'rxjs/add/operator/switchMap';
-import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'activity-detail',
@@ -16,10 +15,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 
 export class ActivityDetailComponent implements OnInit {
-  @Input() activity: any;
-
-  private subscription: Subscription;
-  private item;
+  @Input() activity: Activity;
 
   constructor(
     private activityService: ActivityService,

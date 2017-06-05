@@ -1,7 +1,7 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActivitiesComponent }      from './activities.component';
-import { ActivityDetailComponent }  from './activity-detail.component';
+import { ActivitiesComponent } from './activities.component';
+import { ActivityDetailComponent } from './activity-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/activities', pathMatch: 'full' },
   { path: 'activity/:key', component: ActivityDetailComponent },
