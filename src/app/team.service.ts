@@ -33,8 +33,34 @@ export class TeamService {
     return this.teams;
   }
   markActivityForTeam(activity: any, team: any): void {
-    this.db.object('/teams/' + team.$key + '/points').$ref.transaction( points => {
-      return team.points ? points + activity.points : activity.points;
+    console.log('Shall mark activity');
+    this.getTeam(team.name).subscribe(t => {
+      console.log('Fetched team: ');
+      console.log(t);
+      if (t.activities) {
+        for (let a of t.activities) {
+          if (a.id === activity.id) {
+            console.log('Activity found');
+            return false;
+          }
+        }
+      }
+
+      console.log('Adding points');
+      this.db.object('/teams/' + team.$key + '/points').$ref.transaction(points => {
+        return team.points ? points + activity.points : activity.points;
+      });
+      let activities = t.activities;
+      delete activity.$ref;
+      delete activity.$key;
+      if (activities) {
+        activities[activity.id] = activity;
+      } else {
+        activities = [activity];
+      }
+    console.log(activities);
+      this.db.object('/teams/' + team.$key).update({activities: activities});
     });
   }
+
 }

@@ -17,11 +17,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class SelectTeamComponent implements OnInit {
   activity: Activity;
   teams: Observable<Activity[]>;
-  teamName: string;
-  teamPoints: number;
 
   onClick(team: any): void {
-    console.log(this.activity);
     this.teamService.markActivityForTeam(this.activity, team);
   }
 
