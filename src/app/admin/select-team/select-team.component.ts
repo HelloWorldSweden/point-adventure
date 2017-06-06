@@ -44,4 +44,13 @@ export class SelectTeamComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  pointsGiven(team: any): boolean {
+    for ( let a of team.activities ) {
+      if ( a.id === this.activity.id ) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
