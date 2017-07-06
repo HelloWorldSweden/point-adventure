@@ -46,11 +46,15 @@ export class SelectTeamComponent implements OnInit {
   }
 
   pointsGiven(team: any): boolean {
-    for ( let a of team.activities ) {
-      if ( a.id === this.activity.id ) {
-        return true;
+    if ( team.activities ) {
+      for ( let a of team.activities ) {
+        if ( a ) {
+          if ( a.id === this.activity.id ) {
+            return true;
+          }
+        }
       }
+      return false;
     }
-    return false;
   }
 }
