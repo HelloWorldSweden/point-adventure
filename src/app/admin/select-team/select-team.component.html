@@ -1,4 +1,5 @@
 <header><span class="back-icon fa fa-chevron-circle-left" (click)="goBack()"></span><h1>Välj lag</h1></header>
+<div class="description" [innerHTML]="activity.description"></div>
 <ul class="activities">
   <li *ngFor="let team of teams | async"
       (click)="onClick(team)"

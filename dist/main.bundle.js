@@ -123,7 +123,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "header.detail {\n  position:relative;\n}\n\n.back-icon {\n  position:absolute;\n  top:0.1em;\n  left:0px;\n  padding: 0.5em;\n  font-size: 2em;\n  cursor: pointer;\n}\n\n.description {\n  width: 90%;\n  margin: 1em 5%;\n  padding: 5%;\n  background-color: #f2f2f2;\n  font-family: 'Slabo 27px', serif;\n  font-size: 1em;\n}\n\n.points {\n  color: #F29F4A;\n  font-size: 8em;\n  text-align:center;\n  margin: 0.5em auto;\n}\n", ""]);
+exports.push([module.i, "header.detail {\n  position:relative;\n}\n\n.back-icon {\n  position:absolute;\n  top:0.1em;\n  left:0px;\n  padding: 0.5em;\n  font-size: 2em;\n  cursor: pointer;\n}\n\n.description {\n  width: 90%;\n  margin: 1em 5%;\n  padding: 5%;\n  background-color: #f2f2f2;\n  font-family: 'Slabo 27px', serif;\n  font-size: 1.5em;\n}\n\n.points {\n  color: #F29F4A;\n  font-size: 8em;\n  text-align:center;\n  margin: 0.5em auto;\n}\n", ""]);
 
 // exports
 
@@ -558,7 +558,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "ul.activities {\n  list-style:none;\n  width: 90%;\n  margin:1em 5%;\n  background-color: #f2f2f2;\n  padding: 0;\n}\n\nul.activities li {\n  list-style:none;\n  padding: 0.3em 0.5em;\n  font-size: 2em;\n  border-bottom: 1px solid #ccc;\n  font-family: 'Slabo 27px', serif;\n}\n\nul.activities li:nth-child(2n) {\n  background-color:#f2f2f2;\n}\n\nul.activities li.pointsGiven, ul.activities li.pointsGiven:hover {\n  background-color: #27ae60;\n}\n\nul.activities li:hover {\n  background-color: #ccc;\n}\n\nul.activities li .points {\n  float:right;\n}\n\nul.activities li:last-child {\n  border-bottom: none;\n}\n\n.back-icon {\n  position:absolute;\n  top:0.1em;\n  left:0px;\n  padding: 0.5em;\n  font-size: 2em;\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "ul.activities {\n  list-style:none;\n  width: 90%;\n  margin:1em 5%;\n  background-color: #f2f2f2;\n  padding: 0;\n}\n\nul.activities li {\n  list-style:none;\n  padding: 0.3em 0.5em;\n  font-size: 2em;\n  border-bottom: 1px solid #ccc;\n  font-family: 'Slabo 27px', serif;\n}\n\nul.activities li:nth-child(2n) {\n  background-color:#f2f2f2;\n}\n\nul.activities li.pointsGiven, ul.activities li.pointsGiven:hover {\n  background-color: #27ae60;\n}\n\nul.activities li:hover {\n  background-color: #ccc;\n}\n\nul.activities li .points {\n  float:right;\n}\n\nul.activities li:last-child {\n  border-bottom: none;\n}\n\n.back-icon {\n  position:absolute;\n  top:0.1em;\n  left:0px;\n  padding: 0.5em;\n  font-size: 2em;\n  cursor: pointer;\n}\n\n.description {\n  width: 90%;\n  margin: 1em 5%;\n  padding: 5%;\n  background-color: #f2f2f2;\n  font-family: 'Slabo 27px', serif;\n  font-size: 2em;\n}\n", ""]);
 
 // exports
 
@@ -571,7 +571,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/admin/select-team/select-team.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header><span class=\"back-icon fa fa-chevron-circle-left\" (click)=\"goBack()\"></span><h1>Välj lag</h1></header>\n<ul class=\"activities\">\n  <li *ngFor=\"let team of teams | async\"\n      (click)=\"onClick(team)\"\n      [class.pointsGiven]=\"pointsGiven(team)\">\n    {{team.name}}\n    <span class=\"points\">{{team.points}}</span>\n  </li>\n</ul>\n"
+module.exports = "<header><span class=\"back-icon fa fa-chevron-circle-left\" (click)=\"goBack()\"></span><h1>Välj lag</h1></header>\n<div class=\"description\" [innerHTML]=\"activity.description\"></div>\n<ul class=\"activities\">\n  <li *ngFor=\"let team of teams | async\"\n      (click)=\"onClick(team)\"\n      [class.pointsGiven]=\"pointsGiven(team)\">\n    {{team.name}}\n    <span class=\"points\">{{team.points}}</span>\n  </li>\n</ul>\n"
 
 /***/ }),
 
