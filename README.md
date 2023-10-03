@@ -1,3 +1,5 @@
+# Arkiverad då detta projekt inte längre används
+
 # HwPointAdventure
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
